@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <audio src="happy.mp3"  autoplay="autoplay"> </audio>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Happy BirthDay</title>
+    <embed src="happy.mp3" hidden="true" autostart="true" loop="true">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
+    <style type="text/css">
+         audio{
+            display: none;
+            }
+    </style>
     <style>
         html {
             height: 100%;
         }
-
+        
         body {
             font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
             background: #79a8ae;
@@ -19,7 +27,6 @@
             letter-spacing: 1.2px;
             margin: 0;
         }
-
         a {
             color: #ebf7f4;
         }
@@ -28,7 +35,7 @@
             background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
             background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
             background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-            background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgba(55, 149, 192, 0.979) 120%);
             background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
         }
 
@@ -96,19 +103,21 @@
 </head>
 
 <body>
+    
+
 <div class="cs">
-    <img src="images/lover.jpg" id="logo">
+    <img src="images/1.jpg" id="logo">
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
-    按照9月1日上午8点计算的话，咱们已经认识了
+    按照9月1日上午8点计算的话(其实完全不记得了)，咱们已经认识了
     <br/>
     <span id="span_dt_dt"></span>
 </p>
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("9/1/2013 08:00:00"); //这个日期是可以修改的
+        BirthDay = new Date("9/1/2017 08:00:00"); //这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -132,7 +141,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
             //想说的话
-            S.UI.simulate("坤坤|我本该|写点|浪漫的话|但我|偏不|还要放张|你的丑照|气死你|略略略");
+            S.UI.simulate("现在是|十二点|祝你生日快乐|.......|算了|懒得编了|还是放几张|你的美照|略略略");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -664,7 +673,14 @@
             }
         };
     }());
+    
     S.init();
 </script>
+    <audio id="bgmMusic" src="bgmMusic.mp3" autoplay="autoplay" loop preload="auto" type="audio/mp3"></audio>
+	
+	<script src="jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="all.min.js" ></script>
+	<script src="love.min.js" ></script>
+	<div class="mPower"><span id="on" title="点击暂停" style=""></span><span id="off" title="点击播放"  style=""></span></div>
 </body>
 </html>
